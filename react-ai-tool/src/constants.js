@@ -1,5 +1,8 @@
-export const URL =
-  "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-preview:generateContent?key=AIzaSyBfBUXdnk0zxnygtC18X05iijMb3ZmKeDg";
+const apiKey = import.meta.env.VITE_API_KEY;
+console.log(apiKey);
+console.log(import.meta.env.VITE_API_KEY);
+
+export const URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-preview:generateContent?key=${apiKey}`;
 
 // curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent" \
 //   -H 'Content-Type: application/json' \
@@ -10,7 +13,7 @@ export const URL =
 //       {
 //         "parts": [
 //           {
-//             "text": "Explain how AI works in a few words"
+//             "text": "Explain how AI works in a few words" AIzaSyAqG_ZDd-3Hhj5gwP-Vmw1dfMDMh6k7hDA
 //           }
 //         ]
 //       }
