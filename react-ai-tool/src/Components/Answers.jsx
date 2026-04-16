@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { checkHeading, replaceHeadingStarts } from "../Helper";
 
-const Answer = ({ ans }) => {
+const Answer = ({ ans, totalresult, index }) => {
   const [isHeading, setIsHeading] = useState(false);
   const [formattedText, setFormattedText] = useState("");
 
@@ -15,8 +15,10 @@ const Answer = ({ ans }) => {
 
   return (
     <div className="w-full">
-      {isHeading ? (
-        <h3 className="text-xl font-bold text-white mt-4 mb-2 border-b border-zinc-700 pb-1">
+      {index === 0 && totalresult > 1 ? (
+        <span className="text-xl font-bold text-white">{formattedText}</span>
+      ) : isHeading ? (
+        <h3 className="text-l font-bold text-white mt-4 mb-2 border-b border-zinc-700 pb-1">
           {formattedText}
         </h3>
       ) : (
